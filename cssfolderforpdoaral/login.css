@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+header{
+    display: flex;
+     flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.loginul{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+
+}
+
+.loginul li{
+    list-style: none;
+
+}
+
+.loginul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+
+.formdiv{
+    padding-top: 50px;
+
+    height: 70vh;
+    width: 100%;
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.formpart{
+    background-color: white;
+    height: 50%;
+    width: 40%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    gap: 10px;
+    box-shadow: 0 0 10px 0.5px gray;
+}
+
+.forminputdiv, .forminputsubmit{
+    
+
+    width: 70%;
+}
+.submitbtn{
+    width: 110px;
+    background-color: crimson;
+    border-radius: 50px;
+    border: crimson;
+    color: wheat;
+}
+
+.submitbtn:hover{
+    box-shadow: 0 0 1px 1px gray;
+}
