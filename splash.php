@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="headerist">
         <div class="icon">
             <h1><span>L</span>ibra<span>F</span>ree</h1>
         </div>
@@ -37,25 +37,28 @@
             <p><span>Coding</span> is hard, <br>let us help you <span>Learn</span>.</p>
         </div>
     </section>
-    <section class="offers">
-        <div class="card">
-            <div class="img"><img src="./greg-rakozy-vw3Ahg4x1tY-unsplash.jpg" alt="greg.img"></div>
-            <div class="desc">
-                <h2><span>Code</span> with books.</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic labore .</p>
+    <section class="sectionoff">
+
+        <section class="offers">
+            <div class="card">
+                <div class="img"><img src="./greg-rakozy-vw3Ahg4x1tY-unsplash.jpg" alt="greg.img"></div>
+                <div class="desc">
+                    <h2><span>Code</span> with books.</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic labore .</p>
+                </div>
             </div>
-        </div>
-        <div class="card number2">
-            <div class="img"><img src="./sigmund-exVRu6ffK24-unsplash.jpg" alt="greg.img"></div>
-            <div class="desc">
-                <h2><span>Code</span> with Internet.</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic labore .</p>
+            <div class="card number2">
+                <div class="img"><img src="./sigmund-exVRu6ffK24-unsplash.jpg" alt="greg.img"></div>
+                <div class="desc">
+                    <h2><span>Code</span> with Internet.</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic labore .</p>
+                </div>
             </div>
-        </div>
+        </section>
     </section>
     <section class="misvis">
         <div class="mission">
-            <h1>Our <span>Mision</span></h1>
+            <h1>Our  <span>Mision</span></h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam quisquam rerum repellendus illum reiciendis eius facere eaque ac</p>
         </div>
         <div class="vision">
@@ -63,7 +66,14 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic at reiciendis repudiandae aspernatur numquam, veniam enim expedita recusanda</p>
         </div>
     </section>
+
+
+
+    <script src="splash.js"></script>
 </body>
+
+
+
 
 </html>
 

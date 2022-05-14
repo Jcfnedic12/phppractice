@@ -34,30 +34,8 @@ class datapuller extends connection{
 
         $row = $stmt->fetchAll();
 
-        var_dump($row[0]);
-        // $rowusername = $row[0]['Username'];
+        echo $row[0]['Username'];
 
-        // echo $rowusername."<br> "; 
-        if (!empty($row)){
-
-            echo"ayaww gumana";
-            foreach($row as $rowlist){
-                echo $rowlist['Username']." " . $rowlist['Password'];
-
-            }
-        }else{
-            echo $username." ". $password."-- eto ung laman ng else statment" ."<br>";
-
-            $sql = $this->connect()->query("SELECT * FROM pdolesson");
-
-            $rowerror = $sql->fetchAll();
-
-            foreach ($rowerror as $rowlister ) {
-                echo $rowlister['Username']. " ". $rowlister['Password']." -- eto ung laman ng database ko"."<br>";
-            }
-
-            
-        }
         
 
     }
@@ -76,6 +54,13 @@ class dataFilter extends datapuller{
 
     }
 
+
+    function emptyUsername(){
+        if(empty($this->username)){
+            echo 'Empty Username';
+        }
+    }
+
     function datachecking(){
         
         if(empty($this->username) || empty($this->password)){
@@ -83,13 +68,15 @@ class dataFilter extends datapuller{
         }else{
            $this->datagatherer($this->username, $this->password);
 
-           echo $this->username." ". $this->password. "-- eto ung laman nung class na gamit ko pangcheck if empty ung username or password" ."<br>";
+        //    echo $this->username." ". $this->password. "-- eto ung laman nung class na gamit ko pangcheck if empty ung username or password" ."<br>";
         }
 
     }
 }
 
 if(isset($_POST['loginbutton'])){
+
+  
     $usernamedata = htmlspecialchars($_POST['username']);
     $userpassdata = htmlspecialchars($_POST['userpassword']);
     
@@ -129,7 +116,17 @@ if(isset($_POST['loginbutton'])){
                 <h2>Log in now →</h2>
             </div>
             <div class="forminputdiv">
+
+                           <?php
+
+                    if(isset($_POST['loginbutton'])){
+                        
+                        echo '<p class="hello">'.$datapasser->emptyUsername().'</p>';
+                    }
+
+                ?>
                 <label for="username">Enter Username</label>
+
                 <input type="text" name="username" id="" placeholder="Enter valid username">
 
             </div>
@@ -144,5 +141,8 @@ if(isset($_POST['loginbutton'])){
            </div>
         </form>
     </div>
+
+
+
 </body>
 </html>

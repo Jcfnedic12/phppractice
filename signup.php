@@ -7,10 +7,37 @@ class signupdbconnector extends connection{
 
     $stmt = $this->connect()->prepare("INSERT INTO pdolesson (Username, Password, ContacNumber) VALUES (?,?,?) ");
 
-    $stmt->execute([$username,$password,$contactnumber]);
+    $encrypted = password_hash($password,PASSWORD_DEFAULT);
+
+
+    $stmt->execute([$username,$encrypted,$contactnumber]);
 
     
 
+
+   }
+
+   function checkuser($username){
+
+        $stmt = $this->connect()->prepare("SELECT * FROM pdolesson WHERE Username = ?");
+
+        $stmt->execute([$username]);
+
+        $fetch = $stmt->fetchAll();
+
+
+        $result = false;
+
+        foreach($fetch as $data){
+            if($data['Username'] == $username){
+                $result = true;
+            }
+            else{
+                $result = false;
+            }
+        }
+
+        return $result;
 
    }
 
@@ -32,9 +59,11 @@ class contentchecker extends signupdbconnector{
     
     function usernamechecker(){
         $value = true;
-
+        
+        
         if(empty($this->username)){
             return $value = false;
+        
         }else{
             return $value = true;
         }
@@ -63,6 +92,12 @@ class contentchecker extends signupdbconnector{
 
     function emptyfieldfilter(){
         $value = true;
+
+        if($this->checkuser($this->username)==true){
+            echo 'username exists';
+
+            return $value = false;
+        }
 
         if($this->usernamechecker()==false){
             echo "username textfield is empty";
